@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:workiom/core/resource/language_manager.dart';
+import 'package:workiom/core/resource/string_manager.dart';
+
+class UnDefinedRouteViewBody extends StatelessWidget {
+  const UnDefinedRouteViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          AppStrings.strNoRouteFound.tr(context),
+          style: const TextStyle(
+            color: Color(0xFFA0A0A0),
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+            height: 0,
+          ),
+        ),
+      ],
+    );
+  }
+}
