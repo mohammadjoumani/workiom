@@ -47,7 +47,7 @@ class MainApp extends ConsumerWidget {
         return supportedLocales.first;
       },
       theme: LightModeTheme().getThemeData(
-        fontFamily: FontConstants.fontCairo,
+        fontFamily: FontConstants.fontRubik,
       ),
     );
   }

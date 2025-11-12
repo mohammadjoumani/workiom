@@ -9,4 +9,6 @@ class Constants {
   static const String dot = "●";
   static const int pageSize = 10;
   static const String currency = "SAR"; //ر.س // SAR
+  static const String privacyPolicyUrl = "https://workiom.com/privacy-policy";
+  static const String termsConditions = "https://workiom.com/terms-conditions";
 }

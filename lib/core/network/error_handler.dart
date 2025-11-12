@@ -48,8 +48,6 @@ class ErrorHandler implements Exception {
           return DataSource.forbidden.getFailure();
         case ResponseCode.noInternetConnection:
           return DataSource.noInternetConnection.getFailure();
-        case ResponseCode.updateError:
-          return DataSource.update.getFailure();
         default:
           message = _extractErrorMessage(error.response?.data);
           return Failure(
@@ -92,7 +90,6 @@ enum DataSource {
   sendTimeout,
   cacheError,
   noInternetConnection,
-  update,
   defaultError
 }
 
@@ -128,8 +125,6 @@ extension DataSourceExtension on DataSource {
         return Failure(code: ResponseCode.cacheError, message: ResponseMessage.cacheError.tr(context));
       case DataSource.noInternetConnection:
         return Failure(code: ResponseCode.noInternetConnection, message: ResponseMessage.noInternetConnection.tr(context));
-      case DataSource.update:
-        return Failure(code: ResponseCode.updateError, message: ResponseMessage.updateError.tr(context));
       case DataSource.defaultError:
         return Failure(code: ResponseCode.defaultError, message: ResponseMessage.defaultError.tr(context));
     }
@@ -157,7 +152,6 @@ class ResponseCode {
   static const int locationDenied = -7;
   static const int defaultError = -8;
   static const int connectionError = -9;
-  static const int updateError = -10;
 }
 
 class ResponseMessage {
@@ -179,7 +173,6 @@ class ResponseMessage {
   static const String locationDenied = AppStrings.strLocationDenied;
   static const String defaultError = AppStrings.strDefaultError;
   static const String connectionError = AppStrings.strDefaultError;
-  static const String updateError = AppStrings.strRecommendedUpdateMessage;
 }
 
 class ApiInternalStatus {

@@ -118,7 +118,7 @@ class LightModeTheme implements MainThemeApp {
         // elevation: 0,
         backgroundColor: ColorManager.colorWhite1,
         iconTheme: const IconThemeData(
-          color: ColorManager.colorBlack1,
+          color: ColorManager.colorPrimary,
           size: AppSize.s24,
         ),
         actionsIconTheme: const IconThemeData(

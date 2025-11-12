@@ -6,10 +6,10 @@ extension ValidationExtension on String {
   String get validatePassword {
     final context = AppContext.context;
     if (isEmpty) {
-      return AppStrings.strPasswordEmpty.tr(context);
+      return 'AppStrings.strPasswordEmpty.tr(context)';
     }
     if (length < 8) {
-      return AppStrings.strPasswordMinLength.tr(context);
+      return 'AppStrings.strPasswordMinLength.tr(context)';
     }
     // List<String> errors = [];
     //
@@ -35,7 +35,7 @@ extension ValidationExtension on String {
   String get validateUserName {
     final context = AppContext.context;
     if (isEmpty) {
-      return AppStrings.strUserNameEmpty.tr(context);
+      return 'AppStrings.strUserNameEmpty.tr(context)';
     }
     return '';
   }

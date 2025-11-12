@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:workiom/core/resource/language_manager.dart';
 import 'main_state.dart';
 
 class MainController extends Notifier<MainState> {
@@ -14,9 +15,9 @@ class MainController extends Notifier<MainState> {
   void initLocale() {
     // final settingLocal = ref.read(settingLocalDataProvider);
     // final locale = settingLocal.getLocale();
-    // state = state.copyWith(
-    //   locale: locale,
-    // );
+    state = state.copyWith(
+      locale: englishLocale,
+    );
   }
 
   void changeToEnglish() {
