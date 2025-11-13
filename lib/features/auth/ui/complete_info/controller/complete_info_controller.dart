@@ -17,25 +17,6 @@ class CompleteInfoController extends Notifier<CompleteInfoState> {
 
   CompleteInfoState _onInit() => CompleteInfoState();
 
-  void getEditionsForSelect() async {
-    final repository = ref.read(authRepositoryProvider);
-    state = state.copyWith(
-      getEditionsForSelectDataState: DataState.loading,
-    );
-    final result = await repository.getEditionsForSelect();
-    result.fold(
-      (l) => state = state.copyWith(
-        getEditionsForSelectDataState: DataState.failure,
-        // failure: l,
-      ),
-      (r) => state = state.copyWith(
-        getEditionsForSelectDataState: DataState.success,
-        editionsForSelect: r,
-        editionId: r?.editionsWithFeatures?.first.edition?.id ?? 0,
-      ),
-    );
-  }
-
   void changeWorkspaceName(String name) async {
     final repository = ref.read(authRepositoryProvider);
     if (name.validateTenantName.isNotEmpty) {
@@ -99,7 +80,6 @@ class CompleteInfoController extends Notifier<CompleteInfoState> {
       lastName: state.lastName,
       password: password,
       name: state.workspaceName,
-      editionId: state.editionId,
     );
     result.fold(
       (l) => state = state.copyWith(

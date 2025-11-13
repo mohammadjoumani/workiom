@@ -1,3 +1,4 @@
+import 'package:workiom/core/extension/string_extension.dart';
 import 'package:workiom/core/network/api_service.dart';
 import 'package:workiom/core/network/constants_api.dart';
 import 'package:workiom/core/network/error_handler.dart';
@@ -63,9 +64,14 @@ class AuthRepository {
     required String lastName,
     required String password,
     required String name,
-    required int editionId,
   }) async {
     try {
+      final res = await apiService.get<EditionsForSelectModel>(
+        url: ConstantsApi.getEditionsForSelectUrl,
+        fromJsonT: EditionsForSelectModel.fromJson,
+      );
+      final editionId = res.result?.editionsWithFeatures?.first.edition?.id ?? 0;
+
       final response = await apiService.post<UserModel>(
         url: ConstantsApi.registerTenantUrl,
         data: {
@@ -82,6 +88,7 @@ class AuthRepository {
       );
       return Right(response.result);
     } catch (error) {
+      'MohammadJOumani $error'.log();
       return Left(ErrorHandler.handle(error).failure);
     }
   }

@@ -36,6 +36,21 @@ class FormCompleteInfoSection extends StatelessWidget {
         ),
         Consumer(
           builder: (context, ref, child) {
+            final workspaceName = ref.watch(
+              completeInfoControllerProvider.select(
+                (value) => value.workspaceName,
+              ),
+            );
+            final firstName = ref.watch(
+              completeInfoControllerProvider.select(
+                (value) => value.firstName,
+              ),
+            );
+            final lastName = ref.watch(
+              completeInfoControllerProvider.select(
+                (value) => value.lastName,
+              ),
+            );
             final workspaceValidationMessage = ref.watch(
               completeInfoControllerProvider.select(
                 (value) => value.workspaceNameValidationMessage,
@@ -63,7 +78,12 @@ class FormCompleteInfoSection extends StatelessWidget {
             return AppButtonWidget.primary(
               label: AppStrings.strCreateWorkSpace.tr(context),
               onPressed: () => _onPressedRegisterWorkSpaceButton(ref),
-              enabled: workspaceValidationMessage.isEmpty && firstNameValidationMessage.isEmpty && lastNameValidationMessage.isEmpty,
+              enabled: workspaceValidationMessage.isEmpty &&
+                  firstNameValidationMessage.isEmpty &&
+                  lastNameValidationMessage.isEmpty &&
+                  workspaceName.isNotEmpty &&
+                  firstName.isNotEmpty &&
+                  lastName.isNotEmpty,
               isLoading: isLoading,
             );
           },

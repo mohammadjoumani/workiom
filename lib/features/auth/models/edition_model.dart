@@ -29,17 +29,17 @@ class EditionModel {
   String? publicDescription;
   bool? isPublished;
   bool? isRegistrable;
-  int? type;
-  int? minimumUsersCount;
-  int? monthlyPrice;
-  int? annualPrice;
-  int? waitingDayAfterExpire;
-  int? trialDayCount;
-  int? countAllowExtendTrial;
+  num? type;
+  num? minimumUsersCount;
+  num? monthlyPrice;
+  num? annualPrice;
+  num? waitingDayAfterExpire;
+  num? trialDayCount;
+  num? countAllowExtendTrial;
   bool? hasTrial;
   bool? disableWorkspaceAfterExpire;
   bool? isMostPopular;
-  int? id;
+  num? id;
 
   EditionModel({
     this.name,
