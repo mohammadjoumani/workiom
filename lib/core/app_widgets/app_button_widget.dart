@@ -94,7 +94,7 @@ class AppButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSize.s16),
           child: Ink(
             decoration: BoxDecoration(
-              color: backgroundColor,
+              color: enabled ? backgroundColor : ColorManager.colorDisable,
               borderRadius: BorderRadius.circular(AppSize.s16),
             ),
             child: isLoading

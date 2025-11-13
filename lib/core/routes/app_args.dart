@@ -14,8 +14,3 @@ String get _location {
 }
 
 void setArgs(String key, dynamic value) => _arguments[key] = value;
-
-class AppArgsKeys {
-  static const String phoneNumber = 'phoneNumber';
-  static const String otpFlowType = 'otpFlowType';
-}

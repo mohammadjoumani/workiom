@@ -15,15 +15,18 @@ class ColorManager {
 
   // Color Grey
   static const Color colorGrey1 = Color(0XFFB8B8B8);
-  static const Color colorGrey2 = Color(0XFF838589);
-  static const Color colorGrey3 = Color(0XFFEDEDED);
-  static const Color colorGrey4 = Color(0XFFC4C5C4);
+  static const Color colorGrey2 = Color(0XFFD6D6D6); //UI/UI Gray Darker
+  // static const Color colorGrey3 = Color(0XFFEDEDED);
+  // static const Color colorGrey4 = Color(0XFFC4C5C4);
 
   // Color Black
   static const Color colorBlack1 = Color(0XFF0E0F12); //UI/Typography/Primary
   static const Color colorBlack2 = Color(0XFF555555); //UI/Typography/Secondary
+  static const Color colorBlack3 = Color(0XFF747474); //UI/Typography/Link, Caption, Placeholder, Description, Cancel Button
 
   static const Color colorRed = Color(0xffff0000);
+  static const Color colorOrange = Color(0xFFF5C044);
+  static const Color colorGreen = Color(0xFF5BD77E);
 
   static const genericBoxShadow = BoxShadow(
     color: Color(0x14000000),

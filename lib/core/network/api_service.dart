@@ -119,19 +119,6 @@ class ApiService {
       ),
     );
 
-    // // Handle invalid token or string response
-    // if (response.statusCode == 200 && response.data is String) {
-    //   _logout();
-    //   throw _buildDioException(
-    //     ResponseCode.unauthorised,
-    //     ResponseMessage.unauthorised,
-    //     requestOptions: response.requestOptions,
-    //   );
-    // }
-
-    // Save cookies
-    // _handleCookie(url, response);
-
     // Map to model
     return NetworkResponseModel<T>.fromJson(
       json: response.data,
@@ -139,30 +126,6 @@ class ApiService {
       fromJsonTList: fromJsonTList,
     );
   }
-
-  // Map<String, dynamic> _buildHeaders(String url, Map<String, dynamic>? headers) {
-  //   final resultHeaders = <String, dynamic>{
-  //     'X-lang': settingLocalData.getLanguageApp(),
-  //     'X-Db-Name': Constants.dbName,
-  //   };
-  //
-  //   if (url != ConstantsApi.loginUrl) {
-  //     resultHeaders[HttpHeaders.cookieHeader] = settingLocalData.getCookie();
-  //   }
-  //
-  //   if (headers != null) {
-  //     resultHeaders.addAll(headers);
-  //   }
-  //
-  //   return resultHeaders;
-  // }
-
-  // void _handleCookie(String url, Response response) {
-  //   if (url == ConstantsApi.loginUrl) {
-  //     // final cookie = response.headers[HttpHeaders.setCookieHeader]?.first ?? '';
-  //     // settingLocalData.setCookie(cookie);
-  //   }
-  // }
 
   void _logout() {
     // settingLocalData.clearBox();

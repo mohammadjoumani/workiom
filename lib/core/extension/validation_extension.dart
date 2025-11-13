@@ -3,39 +3,13 @@ import 'package:workiom/core/resource/string_manager.dart';
 import 'package:workiom/core/util/app_context.dart';
 
 extension ValidationExtension on String {
-  String get validatePassword {
+  String get validateEmail {
     final context = AppContext.context;
     if (isEmpty) {
-      return 'AppStrings.strPasswordEmpty.tr(context)';
+      return AppStrings.strEmailEmpty.tr(context);
     }
-    if (length < 8) {
-      return 'AppStrings.strPasswordMinLength.tr(context)';
-    }
-    // List<String> errors = [];
-    //
-    // if (!RegExp(r'[A-Z]').hasMatch(this)) {
-    //   errors.add(AppStrings.strUppercaseLetter.tr(context));
-    // }
-    // if (!RegExp(r'[a-z]').hasMatch(this)) {
-    //   errors.add(AppStrings.strLowercaseLetter.tr(context));
-    // }
-    // if (!RegExp(r'[0-9]').hasMatch(this)) {
-    //   errors.add(AppStrings.strNumber.tr(context));
-    // }
-    // if (!RegExp(r'[!@#\$&*~%^()\-_=+{};:,<.>]').hasMatch(this)) {
-    //   errors.add(AppStrings.strSpecialCharacter.tr(context));
-    // }
-    //
-    // if (errors.isNotEmpty) {
-    //   return '${AppStrings.strPasswordComplexity.tr(context)} ${errors.join(', ')}.';
-    // }
-    return '';
-  }
-
-  String get validateUserName {
-    final context = AppContext.context;
-    if (isEmpty) {
-      return 'AppStrings.strUserNameEmpty.tr(context)';
+    if (!RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this)) {
+      return AppStrings.strEmailNotValid.tr(context);
     }
     return '';
   }
@@ -48,22 +22,40 @@ extension ValidationExtension on String {
     return '';
   }
 
-  bool isValidSaudiPhone() {
-    final regex = RegExp(r'^05[0-9]{8}$');
-    return regex.hasMatch(this);
+  String get validateTenantName {
+    // final context = AppContext.context;
+    if (isEmpty) {
+      return 'The tenant name cannot be empty.';
+    }
+    if (!RegExp(r'^[a-z][a-z0-9-]*$').hasMatch(this)) {
+      return 'Tenant name must start with a letter';
+    }
+
+    return '';
   }
 
-  bool isValidEmail() {
-    return RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+").hasMatch(this);
+  String get validateFirstName {
+    // final context = AppContext.context;
+    if (isEmpty) {
+      return 'The tenant name cannot be empty.';
+    }
+    if (!RegExp(r'^[a-z]+$').hasMatch(this)) {
+      return 'First name must contain only letters.';
+    }
+
+    return '';
   }
 
-  bool isValidPassword() {
-    final regex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$&*~%^()\-_=+{};:,<.>]).{8,}$');
-    return contains(regex);
-  }
+  String get validateLastName {
+    // final context = AppContext.context;
+    if (isEmpty) {
+      return 'The tenant name cannot be empty.';
+    }
+    if (!RegExp(r'^[a-z]+$').hasMatch(this)) {
+      return 'Last name must contain only letters.';
+    }
 
-  bool isValidIban() {
-    return RegExp(r'^EG\d{27}$').hasMatch(this);
+    return '';
   }
 }
 

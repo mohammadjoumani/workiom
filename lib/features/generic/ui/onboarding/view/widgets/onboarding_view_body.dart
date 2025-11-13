@@ -140,7 +140,7 @@ class OnboardingViewBody extends StatelessWidget {
   }
 
   _onPressedContinueWithEmailButton(BuildContext context) {
-    context.pushNamed(AppRoutes.signUpRoute);
+    context.pushNamed(AppRoutes.confirmPasswordRoute);
   }
 
   _onPressedPrivacyPolicy(BuildContext context) {

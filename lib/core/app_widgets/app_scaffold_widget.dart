@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workiom/core/resource/color_manager.dart';
 
 class AppScaffoldWidget extends StatelessWidget {
   const AppScaffoldWidget({
@@ -13,7 +14,6 @@ class AppScaffoldWidget extends StatelessWidget {
     this.bottomNavigationBar,
     this.drawer,
     this.userSafeArea = true,
-    this.powerByWidget,
   });
 
   final bool canPop;
@@ -26,7 +26,6 @@ class AppScaffoldWidget extends StatelessWidget {
   final Widget? bottomNavigationBar;
   final Widget? drawer;
   final bool userSafeArea;
-  final Widget? powerByWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class AppScaffoldWidget extends StatelessWidget {
         }
       },
       child: Scaffold(
-        // backgroundColor: ColorManager.colorBackground,
+        backgroundColor: ColorManager.colorBackground,
         resizeToAvoidBottomInset: resizeToAvoidBottomInset,
         floatingActionButton: floatingActionButton,
         floatingActionButtonLocation: floatingActionButtonLocation,
@@ -49,16 +48,7 @@ class AppScaffoldWidget extends StatelessWidget {
                 ? SafeArea(child: body!)
                 : body,
         drawer: drawer,
-        bottomNavigationBar: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              bottomNavigationBar ?? const SizedBox(),
-              powerByWidget ?? const SizedBox(),
-            ],
-          ),
-        ),
-
+        bottomNavigationBar: bottomNavigationBar,
       ),
     );
   }

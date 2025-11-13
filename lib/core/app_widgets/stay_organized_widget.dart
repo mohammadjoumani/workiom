@@ -14,7 +14,9 @@ class StayOrganizedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(AppPadding.p16),
+        padding: const EdgeInsets.only(
+          bottom: AppPadding.p32,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,7 +32,7 @@ class StayOrganizedWidget extends StatelessWidget {
               ),
             ),
             const AppSvgPictureWidget(
-              assetName: AssetsManager.imgLogo,
+              assetName: AssetsManager.imgHorizontalLogo,
             ),
           ],
         ),

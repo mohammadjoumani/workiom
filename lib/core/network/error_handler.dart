@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:workiom/core/resource/language_manager.dart';
 import 'package:workiom/core/resource/string_manager.dart';
 import 'package:workiom/core/util/app_context.dart';
+import 'package:workiom/core/util/data_models/error_model.dart';
 
 import 'failure.dart';
 
@@ -71,7 +72,8 @@ class ErrorHandler implements Exception {
     //     message += value.toString();
     //   }
     // });
-    return data['message'];
+    final error = ErrorModel.fromJson(data['error']);
+    return error.message ?? '';
   }
 }
 

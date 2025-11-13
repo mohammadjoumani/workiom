@@ -1,16 +1,20 @@
+import 'error_model.dart';
+
 class NetworkResponseModel<T> {
-  final int? code;
-  final String? status;
-  final String? message;
-  final int? totalPages;
-  final T? data;
+  final T? result;
+  final String? targetUrl;
+  final bool? success;
+  final ErrorModel? error;
+  final bool? unAuthorizedRequest;
+  final bool? bAbp;
 
   NetworkResponseModel({
-    this.code,
-    this.status,
-    this.message,
-    this.totalPages,
-    this.data,
+    this.result,
+    this.targetUrl,
+    this.success,
+    this.error,
+    this.unAuthorizedRequest,
+    this.bAbp,
   });
 
   factory NetworkResponseModel.fromJson({
@@ -19,11 +23,11 @@ class NetworkResponseModel<T> {
     T Function(List<dynamic> jsonList)? fromJsonTList,
   }) {
     return NetworkResponseModel(
-      code: json['code'],
-      status: json['status'],
-      message: json['message'] ?? '',
-      totalPages: json['total_pages'],
-      data: _getData(json, fromJsonT, fromJsonTList),
+      targetUrl: json['targetUrl'],
+      success: json['success'],
+      error: json['error'] != null ? ErrorModel.fromJson(json['error']) : null,
+      unAuthorizedRequest: json['unAuthorizedRequest'],
+      result: _getData(json, fromJsonT, fromJsonTList),
     );
   }
 

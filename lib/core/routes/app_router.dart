@@ -22,7 +22,7 @@ class AppRouter extends GoRoute {
           routes: subRoutes,
           pageBuilder: (context, state) {
             final args = _extractArgs(state);
-            setArgs(mName, args);
+            setArgs('/$mName', args);
             // 'AppRouter route: $route, args: $args ${_getUniqueKey()}'.log();
             // final uniqueKey = ValueKey(_getUniqueKey());
             if (withAnimation) {

@@ -1,9 +1,11 @@
 import 'package:go_router/go_router.dart';
 import 'package:workiom/core/util/app_context.dart';
-import 'package:workiom/features/auth/ui/sign_up/view/sign_up_view.dart';
+import 'package:workiom/features/auth/ui/complete_info/view/complete_info_view.dart';
+import 'package:workiom/features/auth/ui/confirm_password/view/confirm_password_view.dart';
 import 'package:workiom/features/generic/ui/onboarding/view/onboarding_view.dart';
 import 'package:workiom/features/generic/ui/splash/view/splash_view.dart';
 import 'package:workiom/features/generic/ui/undefined_route/view/undefined_route_view.dart';
+import 'package:workiom/features/home/ui/home_view.dart';
 
 import 'app_router.dart';
 import 'app_routes.dart';
@@ -23,13 +25,17 @@ class RouterManager {
         screen: const OnboardingView(),
       ),
       AppRouter(
-        mName: AppRoutes.signUpRoute,
-        screen: const SignUpView(),
+        mName: AppRoutes.confirmPasswordRoute,
+        screen: const ConfirmPasswordView(),
       ),
-      // AppRouter(
-      //   mName: AppRoutes.underDevelopmentRoute,
-      //   screen: const SizedBox(),
-      // ),
+      AppRouter(
+        mName: AppRoutes.completeInfoRoute,
+        screen: const CompleteInfoView(),
+      ),
+      AppRouter(
+        mName: AppRoutes.homeRoute,
+        screen: const HomeView(),
+      ),
     ],
     errorBuilder: (context, state) => const UnDefinedRouteView(),
   );
