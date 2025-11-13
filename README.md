@@ -1,16 +1,25 @@
 # workiom
 
-A new Flutter project.
+## Screenshots
 
-## Getting Started
+  <img src="https://github.com/user-attachments/assets/52aa569e-b0de-4252-8817-82a3ff87f94a" width= "150" height="300">
+  <img src="https://github.com/user-attachments/assets/5b1d12a1-1cb0-47d2-bce8-0ba84ef59a12" width= "150" height="300">
+  <img src="https://github.com/user-attachments/assets/e3153a67-6234-4c70-99e9-80b023ec9fd9" width= "150" height="300">
+  <img src="https://github.com/user-attachments/assets/c9c21d6c-15b7-4482-8d23-8b88b26854f1" width= "150" height="300">
+  <img src="https://github.com/user-attachments/assets/c9c21d6c-15b7-4482-8d23-8b88b26854f1" width= "150" height="300">
+  <img src="https://github.com/user-attachments/assets/0a2a6188-dd4e-46fb-b40f-e78622b6af33" width= "150" height="300">
 
-This project is a starting point for a Flutter application.
+-----------------------------------------------------------------------------------
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- SplashView
+- WelcomeView
+- CheckPasswordView
+- CompleteInfoView
+- HomeView  
+-----------------------------------------------------------------------------------
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Install app for test
+- [Android apk](https://drive.google.com/file/d/1Xmq81gruo9t3djiEj3slIjYmPbS4rNGN/view?usp=sharing)
